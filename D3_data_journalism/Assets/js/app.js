@@ -95,7 +95,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 // Retrieve data from the CSV file and execute everything below
 
 // d3.csv("data.csv").then(function(censusData, err) {
-d3.csv("D3_data_journalism/Assets/data/data.csv").then(function(censusData, err) {
+d3.csv("Assets/data/data.csv").then(function(censusData, err) {
   if (err) throw err;
 
   // parse data
