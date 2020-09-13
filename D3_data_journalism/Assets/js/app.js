@@ -95,7 +95,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 // Retrieve data from the CSV file and execute everything below
 
 // d3.csv("data.csv").then(function(censusData, err) {
-d3.csv("/D3_data_journalism/Assets/data/data.csv").then(function(censusData, err) {
+d3.csv("D3_data_journalism/Assets/data/data.csv").then(function(censusData, err) {
   if (err) throw err;
 
   // parse data
@@ -147,6 +147,8 @@ d3.csv("/D3_data_journalism/Assets/data/data.csv").then(function(censusData, err
     .attr("y", 20)
     .attr("value", "in_poverty") // value to grab for event listener
     .classed("active", true)
+    .classed("inactive", false)
+    .style("font-weight", "bold")
     .text("In Poverty (%)");
 
   //var povertyLabel = chartGroup.append("g").selectAll("text")
@@ -169,6 +171,9 @@ d3.csv("/D3_data_journalism/Assets/data/data.csv").then(function(censusData, err
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .classed("axis-text", true)
+    .classed("active", true)
+    .classed("inactive", false)
+    .style("font-weight", "bold")
     .text("Lacks Healthcare (%)");
 
   // updateToolTip function above csv import
@@ -201,12 +206,12 @@ d3.csv("/D3_data_journalism/Assets/data/data.csv").then(function(censusData, err
 
         // changes classes to change bold text
        
-          healthcare_Label
-            .classed("active", false)
-            .classed("inactive", true);
-          poverty_Label
-            .classed("active", true)
-            .classed("inactive", false);
+        //  healthcare_Label
+        //    .classed("active", true)
+        //    .classed("inactive", false);
+        //  poverty_Label
+        //    .classed("active", true)
+        //    .classed("inactive", false);
         
       }
     });
